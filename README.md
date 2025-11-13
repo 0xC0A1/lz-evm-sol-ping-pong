@@ -1,6 +1,6 @@
 # Ping Pong Eth<->Solana with LayerZero
 
-Hi guys, thank you for letting me have the opportunity to participate in this challenge.
+Participating in LayerZero challenge.
 
 ## How to run & deploy:
 
@@ -57,10 +57,6 @@ lz:oapp:send --from-eid 40168 \
 ## LayerZero messaging
 
 LayerZero's tooling starts with three main endpoints:
-
-- `quote`
-- `send`
-- `_lzReceive`
 
 - `quote` quotes the amount in native gas or LZ token to pay for the transaction.
 - `send` leverages a quote from the `quote` endpoint to pay for the gas on the sender's and receiver's end.
