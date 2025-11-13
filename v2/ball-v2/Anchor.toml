@@ -1,0 +1,19 @@
+[toolchain]
+anchor_version = "0.31.1"
+
+[features]
+resolution = false
+skip-lint = false
+
+[programs.localnet]
+my_oapp = "6yFX4KyyNeaH1i4gcUzMjkEYFBqDkMNfPReTEJcQHnze"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -b -p ./tsconfig.json -t 10000000 sdk/tests/**/*.test.ts"

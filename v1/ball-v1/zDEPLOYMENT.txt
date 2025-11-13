@@ -1,0 +1,53 @@
+## Solana
+
+Program pubkey
+
+============================================================================
+pubkey: QqkCUjwxYcZmwLgaf93cCV8mScEDYonNaSUGJAjtVmJ
+============================================================================
+Save this seed phrase and your BIP39 passphrase to recover your new keypair:
+tired romance else taste tell milk day artist buyer unusual innocent confirm
+============================================================================
+
+Program Id: QqkCUjwxYcZmwLgaf93cCV8mScEDYonNaSUGJAjtVmJ
+
+Signature: 2Qt8gV1DDFy5vno3kFqqSK4gvewoh7jWuSDuq53HQCAgp2yZEw8a9nvwhtmJqawFLzrECT9HVaDScTNWS57VeAcN
+
+## Ethereum
+
+Network: ethereum-sepolia
+Deployer: 0x5Afb3882CFD8865630a62D756827295EC93277A2
+Deployed contract: MyOApp, network: ethereum-sepolia, address: 0x49162657a46ABcc42a1421dB210f61D69321A174
+info:    ✓ Your contracts are now deployed
+
+## Run
+
+```
+❯ npx hardhat \
+--network ethereum-sepolia \
+lz:oapp:send --from-eid 40161 \
+--dst-eid 40168
+...
+🔖 Native fee quoted: 18106020706857
+ℹ️ Endpoint Id 40168
+🧾 Transaction hash: 0x2b0a2404e7932865376ad72999da24ea7dc5134cd24d4d165186f2fd2d71525b
+🌐 Track transfer: https://testnet.layerzeroscan.com/tx/0x2b0a2404e7932865376ad72999da24ea7dc5134cd24d4d165186f2fd2d71525b
+```
+
+```
+❯ npx hardhat \
+lz:oapp:send --from-eid 40168 \
+--dst-eid 40161
+...
+info:    Using Solana keypair from SOLANA_KEYPAIR_PATH (~/.config/solana/id.json) => 8EJpvGttUbvSr99iPvT3w2H1NtUGZkmqvThJkPLKfNiM
+🔖 Native fee quoted: 6372090
+ℹ️ Endpoint Id 40161
+🧾 Transaction hash: 3gAFwx2EofvKXJu1kNimmQLhGSZ5CjwfQbrdv5Q9nHNdGXCMAyoun2uaM95Jrv17yHV6dTi39yRP44TJKwwWxrsd
+🌐 Track transfer: https://testnet.layerzeroscan.com/tx/3gAFwx2EofvKXJu1kNimmQLhGSZ5CjwfQbrdv5Q9nHNdGXCMAyoun2uaM95Jrv17yHV6dTi39yRP44TJKwwWxrsd
+```
+
+Second run:
+
+Program Id: 9vfM1hp9scWfarsUNDouzeYd4Zo6M3oo6Z5t9FQSHRWm
+
+Signature: 63XUimZtMUf1Gta81HeDH5U5aXDTVipY9s3X73vDfEsunv3WdGw7Ko5hhecYXkvXD3TwjccKY5nT5KUitYDngSyr

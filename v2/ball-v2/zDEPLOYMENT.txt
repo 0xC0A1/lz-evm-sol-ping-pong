@@ -1,0 +1,8 @@
+
+Wrote new keypair to target/deploy/my_oapp-keypair.json
+==========================================================================
+pubkey: 38bVVJxWqC6bA1QiuXXbTufwH93DEiYaYEPfmEH6Lttn
+==========================================================================
+Save this seed phrase and your BIP39 passphrase to recover your new keypair:
+knee hockey find act moment air donate believe because arrest donkey chief
+==========================================================================
