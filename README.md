@@ -6,7 +6,7 @@ Participating in LayerZero challenge.
 
 First, set up Solana dev tools.
 
-Then, create a proper `.env` file following the layout of `.env.example`
+Then, create a proper `.env` file following the layout of `.env.example`.
 
 Modify `v1/ball-v1/programs/my_oapp/src/instructions/init_store.rs` and change `address = pubkey!("8EJpvGttUbvSr99iPvT3w2H1NtUGZkmqvThJkPLKfNiM")` with an address under your control.
 
@@ -65,11 +65,11 @@ LayerZero's tooling starts with three main endpoints:
 On Solana, there are a couple of extra primitives that are needed to get an LZ OApp working:
 
 - `init_store` This one is not 100% necessary or custom to LayerZero; it's a PDA that gets associated to the `lz_receive_types` instruction.
-- `lz_receive_types` Is a definition for what accounts to pass at runtime into the `lz_receive` call.
-- `set_peer_config` Similar to a wiring task to set up remote chains (or peers) to store them.
-- `quote_send` Quotes the gas price to go from Solana -> Ethereum.
-- `send` Sends the message to the remote chain (Peer).
-- `lz_receive` Instruction that is fired by an executor on the Solana chain.
+- `lz_receive_types` is a definition for what accounts to pass at runtime into the `lz_receive` call.
+- `set_peer_config` similar to a wiring task to set up remote chains (or peers) to store them.
+- `quote_send` quotes the gas price to go from Solana to Ethereum.
+- `send` sends the message to the remote chain (peer).
+- `lz_receive` instruction that is fired by an executor on the Solana chain.
 
 ## What went well, what didn't
 
@@ -97,5 +97,26 @@ it might not be possible using the current SDK on Solana.
 - Figure out a way to implement an A->B->A->B finite loop with a static gas allocation or:
     - Query the remote chain via the `lzRead` primitive for proper gas allocation.
 - Add more instructions for reset and ball management; also introduce a concept of "ball drop penalties" to make the ping-pong more fun and competitive across chain stability.
-- Create a proper `Serve -> Ping -> Pong -> Drop ? -> Serve ...` flow with a proper scoring mechanism.
+- Create a proper `Serve -> Ping -> Pong -> Drop? -> Serve ...` flow with a proper scoring mechanism.
 
+## Chain differences
+
+Data encoding could be a bit tricky and cumbersome since `abi` encoding can be vastly different from `borsh`.
+Solana's composability makes it a bit harder to get in at the beginning for any Ethereum developer but it pays off eventually.
+Solana's need for account passing introduces a couple of challenges when designing more customized flows of data, like DeFi, for example.
+
+## Key takeaways
+
+Using LayerZero is easy enough with their templates, but I can't imagine setting up a project directly from zero just by following their docs;
+seems like there's a lot of things like setting up the wiring that isn't properly documented for the raw SDKs and the best way to understand the
+SDK is by getting a hands-on approach for it.
+
+A sort of a sad time for me was when I faced a wall when I was starting to pass the send to EVM from Solana, got an `Executor_NoOptions` error
+which was also hard to debug.
+
+Finality is mostly the price that you pay with a product like LayerZero, where transactions take up to five minutes to land. Can you imagine
+a ping pong ball taking that amount of time to reach the other side of the table? Hahaha.
+
+Alright, that's it from me,
+
+Kev.
